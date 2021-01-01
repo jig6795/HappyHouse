@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.happyhouse.mapper.MemberMapper">
+
+	<select id="login" parameterType="UserDto" resultType="UserDto">
+		select USER_NAME as userName, USER_SEQ, USER_EMAIL as userEmail, USER_PASSWORD as userPassword, USER_REGISTER_DATE as userRegisterDate, 
+		USER_MANAGER as userManager 
+		from user
+		where USER_EMAIL = #{userEmail} and USER_PASSWORD = #{userPassword}
+	</select>
+
+</mapper>
